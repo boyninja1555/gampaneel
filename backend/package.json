@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "gampaneel-backend",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/index.ts --env-file=.env",
+    "dev": "bun --watch src/index.ts --env-file=.env.local"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "socket.io": "^4.8.3"
+  }
+}
