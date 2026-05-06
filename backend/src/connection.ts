@@ -13,13 +13,7 @@ function handleLogout(socket: Socket, token: string) {
     socket.emit("success logout")
 }
 
-function handleExample(socket: Socket, token: string) {
-    if (!handleAuth(socket, token)) return
-    socket.emit("success example")
-}
-
 export default function handleConnection(socket: Socket) {
     socket.on("login", (email: string, password: string) => handleLogin(socket, email, password))
     socket.on("logout", (token: string) => handleLogout(socket, token))
-    socket.on("example", (token: string) => handleExample(socket, token))
 }
