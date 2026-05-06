@@ -1,6 +1,6 @@
 import type { Socket } from "socket.io"
 import * as globals from "./globals"
-import { handleAuth } from "./connection.lib"
+import { handleAuthe } from "./connection.lib"
 import { createSession, generateToken } from "./user-sessions"
 
 function handleLogin(socket: Socket, email: string, password: string) {
@@ -9,7 +9,7 @@ function handleLogin(socket: Socket, email: string, password: string) {
 }
 
 function handleLogout(socket: Socket, token: string) {
-    if (!handleAuth(socket, token)) return
+    if (!handleAuthe(socket, token)) return
     socket.emit("success logout")
 }
 
